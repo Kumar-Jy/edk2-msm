@@ -23,17 +23,18 @@ jobs:
       matrix:
         device:
           # sm8150
-          - mh2lm
-          - nabu
-          - cepheus
-          - vayu-huaxing
-          - vayu-tianma
+          # mh2lm
+          # nabu
+          # cepheus
+          # vayu-huaxing
+          # vayu-tianma
           # sm8250
-          - lmi
+          # lmi
           # sm8550
-          - fuxi
+          # fuxi
           # sm7325
-          - lisa
+          # lisa
+          - beryllium-tianma
 
 
     # Steps represent a sequence of tasks that will be executed as part of the job
