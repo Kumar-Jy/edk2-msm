@@ -16,6 +16,10 @@
 #include "PlatformUtils.h"
 #include <Configuration/DeviceMemoryMap.h>
 
+BOOLEAN IsLinuxBootRequested(VOID)
+{
+  return FALSE;
+}
 
 VOID InitializeSharedUartBuffers(VOID)
 {

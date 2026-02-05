@@ -420,21 +420,21 @@ Scope(\_SB_.PEP0)
                 package() { "DELAY", package() { 1, }, },
 
                 // [3] PMIC_GPIO: VIN_PM8998 - S3A - ELDO1 - DVDD; LD20-NE182-27-A6/41-D7
-                package()
-                {
-                    "PMICGPIO",
-                    package()
-                    {
-                        "IOCTL_PM_GPIO_CONFIG_DIGITAL_OUTPUT",
-                        0,                              // PMIC Number: 0 == PM8998, 1 == PMI8998, 2 == PM8005
-                        11,                             // GPIO Number: PM_GPIO_12 / CAM_ELDO1_EN
-                        0,                              // Out Buffer Config: 0 == PM_GPIO_OUT_BUFFER_CONFIG_CMOS, 1 == NMOS, 2 == CMOS
-                        1,                              // VIN: 0 == PM_GPIO_VIN0, 1 == VIN1
-                        1,                              // Source: 0 == PM_GPIO_SOURCE_LOW, 1 == HIGH, 2 == PAIRED_GPIO, 3-4 == SPECIAL_FUNCTION1-2, 5-8 == DTEST1-4
-                        3,                              // Out Buffer Strength: 0 == PM_GPIO_OUT_BUFFER_RESERVED, 1 == LOW, 2 == MEDIUM, 3 == HIGH
-                        0,                              // I Source Pull: 0 == PM_GPIO_I_SOURCE_PULL_UP_30uA, 1 == UP_1_5uA, 2 == UP_31_5uA, 3 == UP_1_5uA_PLUS_30uA_BOOST, 4 == DOWN_10uA, 5 == NO_PULL
-                    },
-                },
+                //package()
+                //{
+                //    "PMICGPIO",
+                //    package()
+                //    {
+                //        "IOCTL_PM_GPIO_CONFIG_DIGITAL_OUTPUT",
+                //        0,                              // PMIC Number: 0 == PM8998, 1 == PMI8998, 2 == PM8005
+                //        11,                             // GPIO Number: PM_GPIO_12 / CAM_ELDO1_EN
+                //        0,                              // Out Buffer Config: 0 == PM_GPIO_OUT_BUFFER_CONFIG_CMOS, 1 == NMOS, 2 == CMOS
+                //        1,                              // VIN: 0 == PM_GPIO_VIN0, 1 == VIN1
+                //        1,                              // Source: 0 == PM_GPIO_SOURCE_LOW, 1 == HIGH, 2 == PAIRED_GPIO, 3-4 == SPECIAL_FUNCTION1-2, 5-8 == DTEST1-4
+                //        3,                              // Out Buffer Strength: 0 == PM_GPIO_OUT_BUFFER_RESERVED, 1 == LOW, 2 == MEDIUM, 3 == HIGH
+                //        0,                              // I Source Pull: 0 == PM_GPIO_I_SOURCE_PULL_UP_30uA, 1 == UP_1_5uA, 2 == UP_31_5uA, 3 == UP_1_5uA_PLUS_30uA_BOOST, 4 == DOWN_10uA, 5 == NO_PULL
+                //    },
+                //},
                 package() { "DELAY", package() { 1, }, },
 
                 // [4] PMIC_VREG_VOTE: VIN_PM8998 - S4A - VIN_LVS1_LVS2 - LVS1A - DOVDD. LD20-NE182-41-B4.
@@ -479,7 +479,7 @@ Scope(\_SB_.PEP0)
                 package() { "PMICVREGVOTE", package() { "PPP_RESOURCE_ID_LVS1_A", 4, 0, 0, }, },
 
                 // [4] DVDD OFF
-                package() { "PMICGPIO", package() { "IOCTL_PM_GPIO_CONFIG_DIGITAL_OUTPUT", 0, 11, 0, 1, 0, 3, 0, }, },
+                //package() { "PMICGPIO", package() { "IOCTL_PM_GPIO_CONFIG_DIGITAL_OUTPUT", 0, 11, 0, 1, 0, 3, 0, }, },
                 package() { "DELAY", package() { 1, }, },
 
                 // [5] AVDD (VANA) OFF

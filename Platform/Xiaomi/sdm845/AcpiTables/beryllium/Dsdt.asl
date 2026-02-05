@@ -23,7 +23,12 @@ DefinitionBlock("DSDT.AML", "DSDT", 0x02, "QCOMM ", "SDM850 ", 3)
         // Touch and panel xml
         //
         Include("panel.asl")
-
+		
+		//
+        // FingerPrint
+        //
+        Include("cust_fingerprint.asl")
+		
 		//
         // Buttons
 		//
@@ -46,6 +51,11 @@ DefinitionBlock("DSDT.AML", "DSDT", 0x02, "QCOMM ", "SDM850 ", 3)
            Name (_HID, "QCOM0224")
 	 	   Alias(\_SB.PSUB, _SUB)
         }
+		
+		//
+        // Sillab FM chip
+        //
+        Include("wcnss_fm.asl")
 
         //
         // Bluetooth

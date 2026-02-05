@@ -24,11 +24,11 @@ Name (PCFA, Buffer(){"
 </Group>
 <Group id='EDID Configuration'>
 	<HorizontalScreenSize>7</HorizontalScreenSize>
-	<VerticalScreenSize>14</VerticalScreenSize>
+	<VerticalScreenSize>15</VerticalScreenSize>
 </Group>
 <Group id='Detailed Timing'>
-    <HorizontalScreenSizeMM>68</HorizontalScreenSizeMM>
-    <VerticalScreenSizeMM>140</VerticalScreenSizeMM>
+    <HorizontalScreenSizeMM>75</HorizontalScreenSizeMM>
+    <VerticalScreenSizeMM>155</VerticalScreenSizeMM>
     <HorizontalVerticalScreenSizeMM>0x00</HorizontalVerticalScreenSizeMM>
 </Group>
 <Group id='Display Interface'>
@@ -100,9 +100,9 @@ Name (PCFA, Buffer(){"
 	<BacklightLowPower>40</BacklightLowPower>
 	<PMIPowerPmicNumber>1</PMIPowerPmicNumber>
 	<PMIPowerPmicModel>21</PMIPowerPmicModel>
-	<PMIPowerconfig>1</PMIPowerConfig>
+	<PMIPowerconfig>0</PMIPowerConfig>
 	<AdaptiveBrightnessFeature>1</AdaptiveBrightnessFeature>
-	<CABLEnable>True</CABLEnable>
+	<CABLEnable>False</CABLEnable>
 	<BrignessMinLuminance>200</BrignessMinLuminance>
 	<BrignessMaxLuminance>319970</BrignessMaxLuminance>
 </Group>

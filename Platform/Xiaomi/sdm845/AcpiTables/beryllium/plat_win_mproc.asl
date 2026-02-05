@@ -12,12 +12,11 @@ Scope(\_SB.AMSS)
 	}
 }
 
-//Disabling SCSS
 Scope(\_SB.SCSS)
 {
     Method(_STA, 0)
     {
-       Return (Zero)
+       Return (0x0F)
     }
 }
 
