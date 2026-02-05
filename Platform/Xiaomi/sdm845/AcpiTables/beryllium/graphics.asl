@@ -748,36 +748,51 @@ Device (GPU0)
                 Package()
                 {
                     "PRIMARY_SOURCE_MODES",
-                    9,                           // Number of Primary source modes
+                    12,                           // Number of Primary source modes
                     Package()
                     {
-                        1080,                      // Width
-                        2246,                      // Height
+                        1080,                     // Width
+                        2246,                     // Height
                     },
                     Package()
                     {
-                        1080,                      // Width
-                        2074,                      // Height
+                        1080,                     // Width
+                        2074,                     // Height
                     },
                     Package()
                     {
-                        1080,                      // Width
-                        1920,                      // Height
-                    },
-                    Package()
-                    {
-                        720,                      // Width
-                        1497,                      // Height
+                        1080,                     // Width
+                        1920,                     // Height
                     },
                     Package()
                     {
                         720,                      // Width
-                        1382,                      // Height
+                        1497,                     // Height
                     },
                     Package()
                     {
                         720,                      // Width
-                        1280,                      // Height
+                        1382,                     // Height
+                    },
+                    Package()
+                    {
+                        720,                      // Width
+                        1280,                     // Height
+                    },
+                    Package()
+                    {
+                        600,                      // Width
+                        1247,                     // Height
+                    },
+                    Package()
+                    {
+                        600,                      // Width
+                        1151,                     // Height
+                    },
+                    Package()
+                    {
+                        600,                      // Width
+                        800,                      // Height
                     },
                     Package()
                     {
@@ -2845,24 +2860,25 @@ Device (GPU0)
                 3, 
                 "GRAPHICS_FREQ_CONTROL",      
                 "CORE_CLOCK",                                        // Resource Type
-                9,                                                   // Num P-States in Set
+                10,                                                  // Num P-States in Set
                 1,                                                   // Num CustomData fields in Set
                 TRUE,                                                // Has Thermal Thresholds
-                5,                                                   // Initial P-State
-                3,                                                   // Stable Power P-State
+                6,                                                   // Initial P-State
+                5,                                                   // Stable Power P-State
             
                 //                                        Voltage
                 //                     ID       Value      Level   Thermal Thresholds    Custom Data Fields
                 //                     ---    ----------   -----   --------------------  --------------------
-                Package() { "PSTATE",   0,    710000000,     0,    Package() { "GPU", 100, },    Package() {              416            , } },
-                Package() { "PSTATE",   1,    675000000,     1,    Package() { "GPU",  91, },    Package() {              384            , } },
-                Package() { "PSTATE",   2,    596000000,     2,    Package() { "GPU",  81, },    Package() {              320            , } },
-                Package() { "PSTATE",   3,    520000000,     3,    Package() { "GPU",  71, },    Package() {              256            , } },
-                Package() { "PSTATE",   4,    414000000,     4,    Package() { "GPU",  56, },    Package() {              192            , } },
-                Package() { "PSTATE",   5,    342000000,     5,    Package() { "GPU",  47, },    Package() {              128            , } },
-                Package() { "PSTATE",   6,    247000000,     6,    Package() { "GPU",  35, },    Package() {              64            , } },
-                Package() { "PSTATE",   7,    180000000,     7,    Package() { "GPU",   0, },    Package() {              48            , } },
-                Package() { "PSTATE",   8,            0,     8,    Package() { "GPU",   0, },    Package() {              0            , } },
+                Package() { "PSTATE",   0,    800000000,     0,    Package() { "GPU", 100, },    Package() {              432            , } },
+                Package() { "PSTATE",   1,    710000000,     1,    Package() { "GPU",  91, },    Package() {              416            , } },
+                Package() { "PSTATE",   2,    675000000,     2,    Package() { "GPU",  81, },    Package() {              384            , } },
+                Package() { "PSTATE",   3,    596000000,     3,    Package() { "GPU",  71, },    Package() {              320            , } },
+                Package() { "PSTATE",   4,    520000000,     4,    Package() { "GPU",  61, },    Package() {              256            , } },
+                Package() { "PSTATE",   5,    414000000,     5,    Package() { "GPU",  51, },    Package() {              192            , } },
+                Package() { "PSTATE",   6,    342000000,     6,    Package() { "GPU",  41, },    Package() {              128            , } },
+                Package() { "PSTATE",   7,    247000000,     7,    Package() { "GPU",  31, },    Package() {              64            , } },
+                Package() { "PSTATE",   8,    160000000,     8,    Package() { "GPU",   0, },    Package() {              48            , } },
+                Package() { "PSTATE",   9,            0,     9,    Package() { "GPU",   0, },    Package() {              0            , } },
             }
         )
         

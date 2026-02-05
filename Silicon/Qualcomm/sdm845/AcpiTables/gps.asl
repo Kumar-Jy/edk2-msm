@@ -12,8 +12,8 @@
 	    \_SB_.GLNK
 	})
     
-    Name (_HID, "QCOM02B6")
+    Name (_HID, "QCOM02B6") // _HID: Hardware ID  
 	Alias(\_SB.PSUB, _SUB)
-	Name (_CID, "ACPI\QCOM24B4")
-	Name (_UID, 0)
+	Name (_CID, "ACPI\QCOM24B4") // _CID: Compatible ID
+	Name (_UID, 0) // _UID: Unique ID
     }

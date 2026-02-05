@@ -144,7 +144,7 @@ Include("pmic_batt.asl")
 // QUPV3 GPI device node and resources
 //
 Include("qgpi.asl")
-
+Include("cust_spkr.asl")
 //Include("nfc.asl")
 
 Include("sar_manager.asl")

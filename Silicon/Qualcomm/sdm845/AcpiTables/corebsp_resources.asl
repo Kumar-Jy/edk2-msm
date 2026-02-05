@@ -271,343 +271,343 @@ Scope(\_SB_.PEP0)
             },
         },
 
-        // No sdcard
+        // sdcard
 
-        // Package()
-        // {
-        //     "DEVICE",
-        //     "\\_SB.SDC2",
-        //     Package()
-        //     {
-        //         "COMPONENT",
-        //         0x0, // Component 0.
-        //         Package()
-        //         {
-        //             "FSTATE",
-        //             0x0, // f0 state
-        //         },
-        //         Package()
-        //         {
-        //             "FSTATE",
-        //             0x1, // f1 state
-        //         },
+         Package()
+         {
+             "DEVICE",
+             "\\_SB.SDC2",
+             Package()
+             {
+                 "COMPONENT",
+                 0x0, // Component 0.
+                 Package()
+                 {
+                     "FSTATE",
+                     0x0, // f0 state
+                 },
+                 Package()
+                 {
+                     "FSTATE",
+                     0x1, // f1 state
+                 },
 
-        //         Package()
-        //         {
-        //             "PSTATE_SET",
-        //             0x0,
+                 Package()
+                 {
+                     "PSTATE_SET",
+                     0x0,
 
-        //             //
-        //             // Contract with SDBUS for card frequencies
-        //             //
-        //             // P-State      Note
-        //             // --------     -----
-        //             // 0 - 19       Reserved (Legacy)
-        //             // 20           Reset to 3.3v signal voltage (max fixed at 2.95v)
-        //             // 21           1.8v signal voltage (max fixed at 1.85v)
-        //             Package(){"PSTATE",       0, Package(){"DELAY", package() { 1 }}},
-        //             Package(){"PSTATE",       1, Package(){"DELAY", package() { 1 }}},
-        //             Package(){"PSTATE",       2, Package(){"DELAY", package() { 1 }}},
-        //             Package(){"PSTATE",       3, Package(){"DELAY", package() { 1 }}},
-        //             Package(){"PSTATE",       4, Package(){"DELAY", package() { 1 }}},
-        //             Package(){"PSTATE",       5, Package(){"DELAY", package() { 1 }}},
-        //             Package(){"PSTATE",       6, Package(){"DELAY", package() { 1 }}},
-        //             Package(){"PSTATE",       7, Package(){"DELAY", package() { 1 }}},
-        //             Package(){"PSTATE",       8, Package(){"DELAY", package() { 1 }}},
-        //             Package(){"PSTATE",       9, Package(){"DELAY", package() { 1 }}},
-        //             Package(){"PSTATE",      11, Package(){"DELAY", package() { 1 }}},
-        //             Package(){"PSTATE",      12, Package(){"DELAY", package() { 1 }}},
-        //             Package(){"PSTATE",      13, Package(){"DELAY", package() { 1 }}},
-        //             Package(){"PSTATE",      14, Package(){"DELAY", package() { 1 }}},
-        //             Package(){"PSTATE",      15, Package(){"DELAY", package() { 1 }}},
-        //             Package(){"PSTATE",      16, Package(){"DELAY", package() { 1 }}},
-        //             Package(){"PSTATE",      17, Package(){"DELAY", package() { 1 }}},
-        //             Package(){"PSTATE",      18, Package(){"DELAY", package() { 1 }}},
-        //             Package(){"PSTATE",      19, Package(){"DELAY", package() { 1 }}},
-        //             Package(){"PSTATE",      20,
-        //                 Package()
-        //                 {
-        //                     "PMICVREGVOTE",    // PMICVREGVOTE resource
-        //                     Package()
-        //                     {
-        //                         "PPP_RESOURCE_ID_LDO21_A",     // VREG ID
-        //                         1,                             // Voltage Regulator type = LDO
-        //                         0,                             // Voltage is in micro volts
-        //                         0,                             // force disable from software
-        //                         0,                             // power mode - Low Power Mode
-        //                         0,                             // head room voltage
-        //                     },
-        //                 },
-        //                 Package()
-        //                 {
-        //                     "PMICVREGVOTE",    // PMICVREGVOTE resource
-        //                     Package()
-        //                     {
-        //                         "PPP_RESOURCE_ID_LDO13_A",     // VREG ID
-        //                         1,                             // Voltage Regulator type = LDO
-        //                         0,                             // Voltage is in micro volts
-        //                         0,                             // force disable from software
-        //                         0,                             // power mode - Low Power Mode
-        //                         0,                             // head room voltage
-        //                     },
-        //                 },
-        //                 Package() {"DELAY", package() { 35 }},
-        //                 Package()
-        //                 {
-        //                     "PMICVREGVOTE",    // PMICVREGVOTE resource
-        //                     Package()
-        //                     {
-        //                         "PPP_RESOURCE_ID_LDO21_A",     // VREG ID
-        //                         1,                             // Voltage Regulator type = LDO
-        //                         2960000,                       // Voltage is in micro volts
-        //                         1,                             // force enable from software
-        //                         7,                             // power mode - Normal Power Mode
-        //                         0,                             // head room voltage
-        //                     },
-        //                 },
-        //                 Package()
-        //                 {
-        //                     "PMICVREGVOTE",    // PMICVREGVOTE resource
-        //                     Package()
-        //                     {
-        //                         "PPP_RESOURCE_ID_LDO13_A",     // VREG ID
-        //                         1,                             // Voltage Regulator type = LDO
-        //                         2960000,                       // Voltage is in micro volts
-        //                         1,                             // force enable from software
-        //                         7,                             // power mode - Normal Power Mode
-        //                         0,                             // head room voltage
-        //                     },
-        //                 },
-        //                 Package() {"DELAY", package() { 35 }},
-        //             },
-        //             Package(){"PSTATE",      21,
-        //                 Package()
-        //                 {
-        //                     "PMICVREGVOTE",    // PMICVREGVOTE resource
-        //                     Package()
-        //                     {
-        //                         "PPP_RESOURCE_ID_LDO13_A",  // VREG ID
-        //                         1,                          // Voltage Regulator type = LDO
-        //                         1850000,                    // Voltage is in micro volts
-        //                         1,                          // force enable from software
-        //                         7,                          // power mode - Normal Power Mode
-        //                         0,                          // head room voltage
-        //                     },
-        //                 },
-        //                 Package() {"DELAY", package() { 35 }},
-        //             },
-        //             Package(){"PSTATE",      22,
-        //                 Package()
-        //                 {
-        //                     "PMICVREGVOTE",    // PMICVREGVOTE resource
-        //                     Package()
-        //                     {
-        //                         "PPP_RESOURCE_ID_LDO21_A",     // VREG ID
-        //                         1,                             // Voltage Regulator type = LDO
-        //                         2960000,                       // Voltage is in micro volts
-        //                         1,                             // force enable from software
-        //                         7,                             // power mode - Normal Power Mode
-        //                         0,                             // head room voltage
-        //                     },
-        //                 },
-        //                 Package()
-        //                 {
-        //                     "PMICVREGVOTE",    // PMICVREGVOTE resource
-        //                     Package()
-        //                     {
-        //                         "PPP_RESOURCE_ID_LDO13_A",     // VREG ID
-        //                         1,                             // Voltage Regulator type = LDO
-        //                         2960000,                       // Voltage is in micro volts
-        //                         1,                             // force enable from software
-        //                         7,                             // power mode - Normal Power Mode
-        //                         0,                             // head room voltage
-        //                     },
-        //                 },
-        //                 Package() {"DELAY", package() { 35 }},
-        //             },
-        //             Package(){"PSTATE",      23,
-        //                 Package()
-        //                 {
-        //                     "PMICVREGVOTE",    // PMICVREGVOTE resource
-        //                     Package()
-        //                     {
-        //                         "PPP_RESOURCE_ID_LDO21_A",     // VREG ID
-        //                         1,                             // Voltage Regulator type = LDO
-        //                         0,                             // Voltage is in micro volts
-        //                         0,                             // force disable from software
-        //                         0,                             // power mode - Low Power Mode
-        //                         0,                             // head room voltage
-        //                     },
-        //                 },
-        //                 Package()
-        //                 {
-        //                     "PMICVREGVOTE",    // PMICVREGVOTE resource
-        //                     Package()
-        //                     {
-        //                         "PPP_RESOURCE_ID_LDO13_A",     // VREG ID
-        //                         1,                             // Voltage Regulator type = LDO
-        //                         0,                             // Voltage is in micro volts
-        //                         0,                             // force disable from software
-        //                         0,                             // power mode - Low Power Mode
-        //                         0,                             // head room voltage
-        //                     },
-        //                 },
-        //                 Package() {"DELAY", package() { 35 }},
-        //             },
-        //         },
+                     //
+                     // Contract with SDBUS for card frequencies
+                     //
+                     // P-State      Note
+                     // --------     -----
+                     // 0 - 19       Reserved (Legacy)
+                     // 20           Reset to 3.3v signal voltage (max fixed at 2.95v)
+                     // 21           1.8v signal voltage (max fixed at 1.85v)
+                     Package(){"PSTATE",       0, Package(){"DELAY", package() { 1 }}},
+                     Package(){"PSTATE",       1, Package(){"DELAY", package() { 1 }}},
+                     Package(){"PSTATE",       2, Package(){"DELAY", package() { 1 }}},
+                     Package(){"PSTATE",       3, Package(){"DELAY", package() { 1 }}},
+                     Package(){"PSTATE",       4, Package(){"DELAY", package() { 1 }}},
+                     Package(){"PSTATE",       5, Package(){"DELAY", package() { 1 }}},
+                     Package(){"PSTATE",       6, Package(){"DELAY", package() { 1 }}},
+                     Package(){"PSTATE",       7, Package(){"DELAY", package() { 1 }}},
+                     Package(){"PSTATE",       8, Package(){"DELAY", package() { 1 }}},
+                     Package(){"PSTATE",       9, Package(){"DELAY", package() { 1 }}},
+                     Package(){"PSTATE",      11, Package(){"DELAY", package() { 1 }}},
+                     Package(){"PSTATE",      12, Package(){"DELAY", package() { 1 }}},
+                     Package(){"PSTATE",      13, Package(){"DELAY", package() { 1 }}},
+                     Package(){"PSTATE",      14, Package(){"DELAY", package() { 1 }}},
+                     Package(){"PSTATE",      15, Package(){"DELAY", package() { 1 }}},
+                     Package(){"PSTATE",      16, Package(){"DELAY", package() { 1 }}},
+                     Package(){"PSTATE",      17, Package(){"DELAY", package() { 1 }}},
+                     Package(){"PSTATE",      18, Package(){"DELAY", package() { 1 }}},
+                     Package(){"PSTATE",      19, Package(){"DELAY", package() { 1 }}},
+                     Package(){"PSTATE",      20,
+                         Package()
+                         {
+                             "PMICVREGVOTE",    // PMICVREGVOTE resource
+                             Package()
+                             {
+                                 "PPP_RESOURCE_ID_LDO21_A",     // VREG ID
+                                 1,                             // Voltage Regulator type = LDO
+                                 0,                             // Voltage is in micro volts
+                                 0,                             // force disable from software
+                                 0,                             // power mode - Low Power Mode
+                                 0,                             // head room voltage
+                             },
+                         },
+                         Package()
+                         {
+                             "PMICVREGVOTE",    // PMICVREGVOTE resource
+                             Package()
+                             {
+                                 "PPP_RESOURCE_ID_LDO13_A",     // VREG ID
+                                 1,                             // Voltage Regulator type = LDO
+                                 0,                             // Voltage is in micro volts
+                                 0,                             // force disable from software
+                                 0,                             // power mode - Low Power Mode
+                                 0,                             // head room voltage
+                             },
+                         },
+                         Package() {"DELAY", package() { 35 }},
+                         Package()
+                         {
+                             "PMICVREGVOTE",    // PMICVREGVOTE resource
+                             Package()
+                             {
+                                 "PPP_RESOURCE_ID_LDO21_A",     // VREG ID
+                                 1,                             // Voltage Regulator type = LDO
+                                 2960000,                       // Voltage is in micro volts
+                                 1,                             // force enable from software
+                                 7,                             // power mode - Normal Power Mode
+                                 0,                             // head room voltage
+                             },
+                         },
+                         Package()
+                         {
+                             "PMICVREGVOTE",    // PMICVREGVOTE resource
+                             Package()
+                             {
+                                 "PPP_RESOURCE_ID_LDO13_A",     // VREG ID
+                                 1,                             // Voltage Regulator type = LDO
+                                 2960000,                       // Voltage is in micro volts
+                                 1,                             // force enable from software
+                                 7,                             // power mode - Normal Power Mode
+                                 0,                             // head room voltage
+                             },
+                         },
+                         Package() {"DELAY", package() { 35 }},
+                     },
+                     Package(){"PSTATE",      21,
+                         Package()
+                         {
+                             "PMICVREGVOTE",    // PMICVREGVOTE resource
+                             Package()
+                             {
+                                 "PPP_RESOURCE_ID_LDO13_A",  // VREG ID
+                                 1,                          // Voltage Regulator type = LDO
+                                 1850000,                    // Voltage is in micro volts
+                                 1,                          // force enable from software
+                                 7,                          // power mode - Normal Power Mode
+                                 0,                          // head room voltage
+                             },
+                         },
+                         Package() {"DELAY", package() { 35 }},
+                     },
+                     Package(){"PSTATE",      22,
+                         Package()
+                         {
+                             "PMICVREGVOTE",    // PMICVREGVOTE resource
+                             Package()
+                             {
+                                 "PPP_RESOURCE_ID_LDO21_A",     // VREG ID
+                                 1,                             // Voltage Regulator type = LDO
+                                 2960000,                       // Voltage is in micro volts
+                                 1,                             // force enable from software
+                                 7,                             // power mode - Normal Power Mode
+                                 0,                             // head room voltage
+                             },
+                         },
+                         Package()
+                         {
+                             "PMICVREGVOTE",    // PMICVREGVOTE resource
+                             Package()
+                             {
+                                 "PPP_RESOURCE_ID_LDO13_A",     // VREG ID
+                                 1,                             // Voltage Regulator type = LDO
+                                 2960000,                       // Voltage is in micro volts
+                                 1,                             // force enable from software
+                                 7,                             // power mode - Normal Power Mode
+                                 0,                             // head room voltage
+                             },
+                         },
+                         Package() {"DELAY", package() { 35 }},
+                     },
+                     Package(){"PSTATE",      23,
+                         Package()
+                         {
+                             "PMICVREGVOTE",    // PMICVREGVOTE resource
+                             Package()
+                             {
+                                 "PPP_RESOURCE_ID_LDO21_A",     // VREG ID
+                                 1,                             // Voltage Regulator type = LDO
+                                 0,                             // Voltage is in micro volts
+                                 0,                             // force disable from software
+                                 0,                             // power mode - Low Power Mode
+                                 0,                             // head room voltage
+                             },
+                         },
+                         Package()
+                         {
+                             "PMICVREGVOTE",    // PMICVREGVOTE resource
+                             Package()
+                             {
+                                 "PPP_RESOURCE_ID_LDO13_A",     // VREG ID
+                                 1,                             // Voltage Regulator type = LDO
+                                 0,                             // Voltage is in micro volts
+                                 0,                             // force disable from software
+                                 0,                             // power mode - Low Power Mode
+                                 0,                             // head room voltage
+                             },
+                         },
+                         Package() {"DELAY", package() { 35 }},
+                     },
+                 },
 
-        //          // P-state set 1: APPS Clock frequencies
-        //          // 0:  Disable
-        //          // 1:   20 MHz   (SVS2)
-        //          // 2:  100 MHz   (SVS)
-        //          // 3:  201.5 MHz (Nominal)
-        //          Package()
-        //          {
-        //              "PSTATE_SET",
-        //              0x1,
+                  // P-state set 1: APPS Clock frequencies
+                  // 0:  Disable
+                  // 1:   20 MHz   (SVS2)
+                  // 2:  100 MHz   (SVS)
+                  // 3:  201.5 MHz (Nominal)
+                  Package()
+                  {
+                      "PSTATE_SET",
+                      0x1,
 
-        //              Package()
-        //              {
-        //                  "PSTATE",
-        //                  0x0,
-        //                  package() {"CLOCK", package() {"gcc_sdcc2_apps_clk", 2}},
-        //              },
-        //              Package()
-        //              {
-        //                  "PSTATE",
-        //                  0x1,
-        //                  package() {"CLOCK", package() {"gcc_sdcc2_apps_clk", 8, 20000000, 2}},
-        //              },
-        //              Package()
-        //              {
-        //                  "PSTATE",
-        //                  0x2,
-        //                  package() {"CLOCK", package() {"gcc_sdcc2_apps_clk", 8, 100000000, 2}},
-        //              },
-        //              Package()
-        //              {
-        //                  "PSTATE",
-        //                  0x3,
-        //                  package() {"CLOCK", package() {"gcc_sdcc2_apps_clk", 8, 201500000, 2}},
-        //              },
-        //         },
+                      Package()
+                      {
+                          "PSTATE",
+                          0x0,
+                          package() {"CLOCK", package() {"gcc_sdcc2_apps_clk", 2}},
+                      },
+                      Package()
+                      {
+                          "PSTATE",
+                          0x1,
+                          package() {"CLOCK", package() {"gcc_sdcc2_apps_clk", 8, 20000000, 2}},
+                      },
+                      Package()
+                      {
+                          "PSTATE",
+                          0x2,
+                          package() {"CLOCK", package() {"gcc_sdcc2_apps_clk", 8, 100000000, 2}},
+                      },
+                      Package()
+                      {
+                          "PSTATE",
+                          0x3,
+                          package() {"CLOCK", package() {"gcc_sdcc2_apps_clk", 8, 201500000, 2}},
+                      },
+                 },
 
-        //         // P-state set 2: Bus Bandwidth requests
-        //         // P0: IB = 400 MBps, AB = 200 MBps
-        //         // P1: IB = 200 MBps, AB = 100 MBps
-        //         // P2: IB =  40 MBps, AB =  20 MBps
-        //         // P3: IB =   0 MBps, AB =   0 MBps
-        //         Package()
-        //         {
-        //             "PSTATE_SET",
-        //             0x2,
+                 // P-state set 2: Bus Bandwidth requests
+                 // P0: IB = 400 MBps, AB = 200 MBps
+                 // P1: IB = 200 MBps, AB = 100 MBps
+                 // P2: IB =  40 MBps, AB =  20 MBps
+                 // P3: IB =   0 MBps, AB =   0 MBps
+                 Package()
+                 {
+                     "PSTATE_SET",
+                     0x2,
 
-        //             Package()
-        //             {
-        //                 "PSTATE",
-        //                 0x0,
-        //                 package() {"BUSARB", Package() { 3,     "ICBID_MASTER_SDCC_2",   "ICBID_SLAVE_EBI1",   400000000,   200000000}},
-        //             },
+                     Package()
+                     {
+                         "PSTATE",
+                         0x0,
+                         package() {"BUSARB", Package() { 3,     "ICBID_MASTER_SDCC_2",   "ICBID_SLAVE_EBI1",   400000000,   200000000}},
+                     },
 
-        //             Package()
-        //             {
-        //                 "PSTATE",
-        //                 0x1,
-        //                 package() {"BUSARB", Package() { 3,     "ICBID_MASTER_SDCC_2",   "ICBID_SLAVE_EBI1",   200000000,   100000000}},
-        //             },
+                     Package()
+                     {
+                         "PSTATE",
+                         0x1,
+                         package() {"BUSARB", Package() { 3,     "ICBID_MASTER_SDCC_2",   "ICBID_SLAVE_EBI1",   200000000,   100000000}},
+                     },
 
-        //             Package()
-        //             {
-        //                 "PSTATE",
-        //                 0x2,
-        //                 package() {"BUSARB", Package() { 3,     "ICBID_MASTER_SDCC_2",   "ICBID_SLAVE_EBI1",   40000000,   20000000}},
-        //             },
+                     Package()
+                     {
+                         "PSTATE",
+                         0x2,
+                         package() {"BUSARB", Package() { 3,     "ICBID_MASTER_SDCC_2",   "ICBID_SLAVE_EBI1",   40000000,   20000000}},
+                     },
 
-        //             Package()
-        //             {
-        //                 "PSTATE",
-        //                 0x3,
-        //                 package() {"BUSARB", Package() { 3,     "ICBID_MASTER_SDCC_2",   "ICBID_SLAVE_EBI1",   0,   0}},
-        //             },
-        //         },
+                     Package()
+                     {
+                         "PSTATE",
+                         0x3,
+                         package() {"BUSARB", Package() { 3,     "ICBID_MASTER_SDCC_2",   "ICBID_SLAVE_EBI1",   0,   0}},
+                     },
+                 },
 
-        //         // P-state set 3: MSFT P-states
-        //         // P0: Clk = 200 MHz, IB = 400 MBps, AB = 200 MBps
-        //         // P1: Clk = 100 MHz, IB = 200 MBps, AB = 100 MBps
-        //         // P2: Clk = 20 MHz,  IB =  40 MBps, AB =  20 MBps
-        //         Package()
-        //         {
-        //             "PSTATE_SET",
-        //             0x3,
+                 // P-state set 3: MSFT P-states
+                 // P0: Clk = 200 MHz, IB = 400 MBps, AB = 200 MBps
+                 // P1: Clk = 100 MHz, IB = 200 MBps, AB = 100 MBps
+                 // P2: Clk = 20 MHz,  IB =  40 MBps, AB =  20 MBps
+                 Package()
+                 {
+                     "PSTATE_SET",
+                     0x3,
 
-        //             Package()
-        //             {
-        //                 "PSTATE",
-        //                 0x0,
-        //                 Package() { "PSTATE_ADJUST", Package() { 1, 3 } },
-        //                 Package() { "PSTATE_ADJUST", Package() { 2, 0 } },
-        //             },
-        //             Package()
-        //             {
-        //                "PSTATE",
-        //                 0x1,
-        //                 Package() { "PSTATE_ADJUST", Package() { 1, 2 } },
-        //                 Package() { "PSTATE_ADJUST", Package() { 2, 1 } },
-        //             },
-        //             Package()
-        //             {
-        //                 "PSTATE",
-        //                 0x2,
-        //                 Package() { "PSTATE_ADJUST", Package() { 1, 1 } },
-        //                 Package() { "PSTATE_ADJUST", Package() { 2, 2 } },
-        //             },
-        //         },
+                     Package()
+                     {
+                         "PSTATE",
+                         0x0,
+                         Package() { "PSTATE_ADJUST", Package() { 1, 3 } },
+                         Package() { "PSTATE_ADJUST", Package() { 2, 0 } },
+                     },
+                     Package()
+                     {
+                        "PSTATE",
+                         0x1,
+                         Package() { "PSTATE_ADJUST", Package() { 1, 2 } },
+                         Package() { "PSTATE_ADJUST", Package() { 2, 1 } },
+                     },
+                     Package()
+                     {
+                         "PSTATE",
+                         0x2,
+                         Package() { "PSTATE_ADJUST", Package() { 1, 1 } },
+                         Package() { "PSTATE_ADJUST", Package() { 2, 2 } },
+                     },
+                 },
 
 
-        //         // P-state set 4: AHB clock
-        //         Package()
-        //         {
-        //             "PSTATE_SET",
-        //             0x4,
+                 // P-state set 4: AHB clock
+                 Package()
+                 {
+                     "PSTATE_SET",
+                     0x4,
 
-        //             Package()
-        //             {
-        //                 "PSTATE",
-        //                 0x0,
-        //                 package() {"CLOCK", package() {"gcc_sdcc2_ahb_clk", 1,}},   // AHB freq should be 100 MHz
-        //             },
-        //             Package()
-        //             {
-        //                "PSTATE",
-        //                 0x1,
-        //                 package() {"CLOCK", package() {"gcc_sdcc2_ahb_clk", 2}},
-        //             },
-        //         },
-        //     },
+                     Package()
+                     {
+                         "PSTATE",
+                         0x0,
+                         package() {"CLOCK", package() {"gcc_sdcc2_ahb_clk", 1,}},   // AHB freq should be 100 MHz
+                     },
+                     Package()
+                     {
+                        "PSTATE",
+                         0x1,
+                         package() {"CLOCK", package() {"gcc_sdcc2_ahb_clk", 2}},
+                     },
+                 },
+             },
 
-        //     Package()
-        //     {
-        //         "DSTATE",
-        //         0x0, // D0 state
+             Package()
+             {
+                 "DSTATE",
+                 0x0, // D0 state
 
-        //         Package() {"PSTATE_ADJUST", Package () { 0, 22 }},
-        //         package() {"TLMMPORT", package() { 0x99A000, 0x7FFF, 0x1FE4 }},
-        //         Package() {"PSTATE_ADJUST", Package() { 2, 0 }},
-        //         Package() {"PSTATE_ADJUST", Package() { 4, 0 }},
-        //         Package() {"PSTATE_ADJUST", Package() { 1, 3 }},
-        //     },
-        //     Package()
-        //     {
-        //         "DSTATE",
-        //         0x3, // D3 state
+                 Package() {"PSTATE_ADJUST", Package () { 0, 22 }},
+                 package() {"TLMMPORT", package() { 0x99A000, 0x7FFF, 0x1FE4 }},
+                 Package() {"PSTATE_ADJUST", Package() { 2, 0 }},
+                 Package() {"PSTATE_ADJUST", Package() { 4, 0 }},
+                 Package() {"PSTATE_ADJUST", Package() { 1, 3 }},
+             },
+             Package()
+             {
+                 "DSTATE",
+                 0x3, // D3 state
 
-        //         Package() {"PSTATE_ADJUST", Package() { 1, 0 }},
-        //         Package() {"PSTATE_ADJUST", Package() { 4, 1 }},
-        //         Package() {"PSTATE_ADJUST", Package() { 2, 3 }},
-        //         package() {"TLMMPORT", package() { 0x99A000, 0x7FFF, 0xA00 }},
-        //         Package() {"PSTATE_ADJUST", Package () { 0, 23 }},
-        //     },
-        // },
+                 Package() {"PSTATE_ADJUST", Package() { 1, 0 }},
+                 Package() {"PSTATE_ADJUST", Package() { 4, 1 }},
+                 Package() {"PSTATE_ADJUST", Package() { 2, 3 }},
+                 package() {"TLMMPORT", package() { 0x99A000, 0x7FFF, 0xA00 }},
+                 Package() {"PSTATE_ADJUST", Package () { 0, 23 }},
+             },
+         },
         ///////////////////////////////////////////////////////////////////////////////////////
 
         Package()

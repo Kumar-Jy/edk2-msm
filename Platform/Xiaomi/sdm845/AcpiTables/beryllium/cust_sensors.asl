@@ -26,6 +26,6 @@ Device (SEN2)
     }
 	Method(_STA, 0)
 	{
-		Return (0x0)
+		Return (0xF)
 	}
 }

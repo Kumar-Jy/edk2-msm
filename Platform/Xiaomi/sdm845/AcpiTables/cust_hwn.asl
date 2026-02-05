@@ -1,5 +1,5 @@
 Name(HWNH, 0)
-Name(HWNL, 0)
+Name(HWNL, 1)
 
 //
 // HWN Haptics
@@ -167,5 +167,24 @@ Device (HWN0)
          1,     //Exponent (Values range 0 - 7)
        })
        Return (CFG0)
+   }
+   Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
+   {
+       Name (NAM, Buffer (0x0A)
+       {
+           "\\_SB.SPMI"
+       })
+       Name (END, Buffer (0x02)
+       {
+            0x79, 0x00                                       // y.
+       })
+       Name (RGB1, Buffer (0x0C)
+       {
+           /* 0000 */  0x8E, 0x13, 0x00, 0x01, 0x00, 0xC1, 0x02, 0x03,  // ........
+           /* 0008 */  0xD0, 0x01, 0x00, 0x00                           // ....
+       })
+       Concatenate (RGB1, NAM, Local0)
+       Concatenate (Local0, END, Local1)
+       Return (Local1)
    }
 }
