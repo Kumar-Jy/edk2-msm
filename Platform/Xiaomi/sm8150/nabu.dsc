@@ -17,7 +17,7 @@
 !include Platform/Qualcomm/sm8150/sm8150.dsc
 
 [BuildOptions.common]
-  GCC:*_*_AARCH64_CC_FLAGS = -DMEMMAP_XIAOMI_HACKS=1 -DENABLE_SIMPLE_INIT -DENABLE_LINUX_SIMPLE_MASS_STORAGE -DENABLE_LINUX_UTILS
+  GCC:*_*_AARCH64_CC_FLAGS = -DENABLE_PUS3 -DMEMMAP_XIAOMI_HACKS=1 -DENABLE_SIMPLE_INIT -DENABLE_LINUX_SIMPLE_MASS_STORAGE -DENABLE_LINUX_UTILS
 
 [PcdsFixedAtBuild.common]
   gQcomTokenSpaceGuid.PcdMipiFrameBufferWidth|1600
@@ -34,3 +34,14 @@
 
   gQcomTokenSpaceGuid.PcdHallSensorPin|9
   gQcomTokenSpaceGuid.PcdHallSensorActiveLow|TRUE
+
+  # Produce the highest video mode in Shell and UiApp
+[PcdsDynamicDefault.common]
+  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoHorizontalResolution|0 # /8 = column
+  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoVerticalResolution|0 #/19 = row
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoHorizontalResolution|0
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoVerticalResolution|0
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupConOutRow|0
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupConOutColumn|0
+  gEfiMdeModulePkgTokenSpaceGuid.PcdConOutRow|0
+  gEfiMdeModulePkgTokenSpaceGuid.PcdConOutColumn|0
