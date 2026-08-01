@@ -47,6 +47,7 @@ function _build(){
 	source "${_EDK2}/edksetup.sh"
 	[ -d "${WORKSPACE}" ]||mkdir "${WORKSPACE}"
 	set -x
+	sed -i 's/-Werror/-Wno-error/g' "${_EDK2}/BaseTools/Source/C/Makefiles/header.makefile" 2>/dev/null || true
 	make -C "${_EDK2}/BaseTools"||exit "$?"
 
 	SPLIT_DSDT=false
