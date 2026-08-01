@@ -1,3 +1,4 @@
+Include ("novatek_focaltech_resources.asl")
 
 Device (TSC1)
 {

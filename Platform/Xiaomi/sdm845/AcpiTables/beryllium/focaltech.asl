@@ -1,10 +1,12 @@
-Device (TSC2)
+Include ("novatek_focaltech_resources.asl")
+
+Device (TSC1)
 {
     Name (_HID, "FTTS8719")  // _HID: Hardware ID
     //Name (_HID, "TEST3330")  // _HID: Hardware ID
     Name (_HRV, One)  // _HRV: Hardware Revision
     Name (_ADR, Zero)  // _ADR: Address
-    Name (_UID, 0x02)  // _UID: Unique ID
+    Name (_UID, One)  // _UID: Unique ID
     Name (_DEP, Package (0x03)  // _DEP: Dependencies
     {
         PEP0, 
@@ -26,7 +28,7 @@ Device (TSC2)
                     0x001F
                 }
         })
-        Return (RBUF) /* \_SB_.TSC2._CRS.RBUF */
+        Return (RBUF) /* \_SB_.TSC1._CRS.RBUF */
     }
 
     Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
@@ -37,7 +39,7 @@ Device (TSC2)
             {
                     0x00                                             // .
             })
-            CopyObject (ToBuffer (Arg0), _T_0) /* \_SB_.TSC2._DSM._T_0 */
+            CopyObject (ToBuffer (Arg0), _T_0) /* \_SB_.TSC1._DSM._T_0 */
             If ((_T_0 == ToUUID ("3cdff6f7-4267-4555-ad05-b30a3d8938de") /* HID I2C Device */))
             {
                 While (One)
@@ -94,7 +96,7 @@ Device (TSC2)
 
     Name (PGID, Buffer (0x0A)
     {
-        "\\_SB.TSC2"
+        "\\_SB.TSC1"
     })
     Name (DBUF, Buffer (DBFL){})
     CreateByteField (DBUF, Zero, STAT)
@@ -119,21 +121,21 @@ Device (TSC2)
     {
         DEID = Buffer (ESNL){}
         DVAL = Zero
-        DEID = PGID /* \_SB_.TSC2.PGID */
+        DEID = PGID /* \_SB_.TSC1.PGID */
         If (^^ABD.AVBL)
         {
-            ^^PEP0.FLD0 = DBUF /* \_SB_.TSC2.DBUF */
+            ^^PEP0.FLD0 = DBUF /* \_SB_.TSC1.DBUF */
         }
     }
 
     Method (_PS3, 0, NotSerialized)  // _PS3: Power State 3
     {
-        //DEID = Buffer (ESNL){}
-        //DVAL = 0x03
-        //DEID = PGID /* \_SB_.TSC2.PGID */
-        //If (^^ABD.AVBL)
-        //{
-            //^^PEP0.FLD0 = DBUF /* \_SB_.TSC2.DBUF */
-        //}
+        DEID = Buffer (ESNL){}
+        DVAL = 0x03
+        DEID = PGID /* \_SB_.TSC1.PGID */
+        If (^^ABD.AVBL)
+        {
+            ^^PEP0.FLD0 = DBUF /* \_SB_.TSC1.DBUF */
+        }
     }
 }
