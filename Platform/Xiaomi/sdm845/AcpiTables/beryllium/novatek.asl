@@ -16,7 +16,7 @@ Device (TSC1)
     {
         Name (RBUF, ResourceTemplate ()
         {
-            I2cSerialBusV2 (0x0062, ControllerInitiated, 0x00061A80,
+            I2cSerialBusV2 (0x0001, ControllerInitiated, 0x00061A80,
                 AddressingMode7Bit, "\\_SB.IC15",
                 0x00, ResourceConsumer, , Exclusive,
                 )
