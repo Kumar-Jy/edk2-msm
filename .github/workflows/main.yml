@@ -14,6 +14,7 @@ jobs:
         device:
           - beryllium-tianma
           - beryllium-ebbg
+          - beryllium-tianma-fts
 
     steps:
       - name: Checkout repository
