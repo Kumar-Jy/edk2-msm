@@ -28,7 +28,6 @@ Name (SOSI, 0xdeadbeefffffffff)  // Holds the base address of the SoCInfo shared
 
 //Audio Drivers
 Include("audio.asl")
-Include("audio_bus.asl")
 		
         //
         // Storage - UFS/SD 
