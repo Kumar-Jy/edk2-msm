@@ -2,9 +2,9 @@ Include ("fingerprint_resources.asl")
 
 Device (FPRT)
 {
-	Name (_HID, "GXFP55A4")  // _HID: Hardware ID
-	Name (_CID, "GXFP55A4")  // _CID: Compatible ID
-	Name (_UID, "GXFP55A4")  // _UID: Unique ID
+	Name (_HID, "GXFP3208")  // _HID: Hardware ID (Goodix GF3208, inbox WBF driver)
+	Name (_CID, "GXFP3208")  // _CID: Compatible ID
+	Name (_UID, "GXFP3208")  // _UID: Unique ID
 	Name (_DEP, Package (3)  // _DEP: Dependencies
 	{
 		\_SB.GIO0, 

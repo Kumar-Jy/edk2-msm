@@ -1,0 +1,51 @@
+;;============================================================================
+;; GoodixWBF.inf - KMDF sensor driver for Goodix GF3208 on Xiaomi POCO F1
+;; (beryllium). Enumerates on ACPI\GXFP3208 under the Windows Biometric
+;; Framework. Sensor image/match is not available on this hardware (the
+;; biometric engine runs in the Qualcomm gfdip TrustZone app, absent on
+;; Windows); the driver is a compilable integration skeleton.
+;;============================================================================
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = Biometric
+ClassGuid   = {53D29CF7-5C37-4E22-80E7-9F21D38F2D70}
+Provider    = %ProviderName%
+DriverVer   = 11/01/2026,1.0.0.0
+CatalogFile = GoodixWBF.cat
+
+[Manufacturer]
+%Mfg% = Beryllium,NTARM64
+
+[Beryllium.NTARM64]
+%DeviceName% = GoodixWBF_Install, ACPI\GXFP3208
+%DeviceName% = GoodixWBF_Install, ACPI\GXFP3200 ; inbox-compatible id
+
+[GoodixWBF_Install.NTARM64]
+CopyFiles = GoodixWBF_CopyFiles
+
+[GoodixWBF_Install.NTARM64.Services]
+AddService = GoodixWBF, 0x00000002, GoodixWBF_Service_Install
+
+[GoodixWBF_CopyFiles]
+GoodixWBF.sys
+
+[GoodixWBF_Service_Install]
+ServiceType  = 1      ; SERVICE_KERNEL_DRIVER
+StartType    = 3      ; SERVICE_DEMAND_START
+ErrorControl = 1      ; SERVICE_ERROR_NORMAL
+ServiceBinary = %12%\GoodixWBF.sys
+
+[DestinationDirs]
+GoodixWBF_CopyFiles = 12 ; %windir%\system32\drivers
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[SourceDisksFiles]
+GoodixWBF.sys = 1,,
+
+[Strings]
+ProviderName = "Goodix Projekt"
+Mfg          = "beryllium"
+DeviceName   = "Goodix GF3208 Fingerprint Sensor"
+DiskName     = "Goodix WBF Driver Install Disk"

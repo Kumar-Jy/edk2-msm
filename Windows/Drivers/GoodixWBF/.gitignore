@@ -1,0 +1,14 @@
+# WDK/VS build output
+ARM64/
+x64/
+Debug/
+Release/
+*.obj
+*.pdb
+*.sys
+*.cer
+*.iobj
+*.ipdb
+*.tlog/
+*.recipe
+vcxproj.FileListAbsolute.txt
