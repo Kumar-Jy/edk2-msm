@@ -5,11 +5,10 @@ Device (FPRT)
 	Name (_HID, "GXFP3208")  // _HID: Hardware ID (Goodix GF3208, inbox WBF driver)
 	Name (_CID, "GXFP3208")  // _CID: Compatible ID
 	Name (_UID, "GXFP3208")  // _UID: Unique ID
-	Name (_DEP, Package (3)  // _DEP: Dependencies
+	Name (_DEP, Package (2)  // _DEP: Dependencies
 	{
 		\_SB.GIO0, 
-		\_SB.PEP0, 
-		\_SB.TREE
+		\_SB.PEP0
 	})
 	Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
 	{
