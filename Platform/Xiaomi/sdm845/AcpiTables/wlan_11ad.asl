@@ -2,5 +2,5 @@
 
 Method(_STA, 0)
 {
-	Return (0xF)
+	Return (0x0)
 }

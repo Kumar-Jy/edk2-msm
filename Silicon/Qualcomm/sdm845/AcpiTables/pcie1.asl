@@ -955,7 +955,7 @@ Device (PCI1) {
 
 	Method(_STA, 0)
 	{
-		Return (0x0F) // EndPoints available
+		Return (0x0) // EndPoints unavailable
 	}
 
 	Method(_PSC) {
