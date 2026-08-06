@@ -3,9 +3,9 @@
 //
 Device (SDC2)
 {
-   Name (_DEP, Package(0x1) {
+   Name (_DEP, Package(0x2) {
        \_SB_.PEP0,
-       //\_SB_.GIO0
+       \_SB_.GIO0
    })
 
    Name (_HID, "QCOM2466")
@@ -23,8 +23,8 @@ Device (SDC2)
            Interrupt(ResourceConsumer, Level, ActiveHigh, Exclusive, , , ) {236}
 
            // Card detect GPIO
-           //GpioInt(Level, ActiveLow, SharedAndWake, PullDown, 30000, "\\_SB.GIO0", ,) {192}
-           //Gpioio(Shared, PullDown, 0, 0, , "\\_SB.GIO0", ,) {126}
+           GpioInt(Edge, ActiveBoth, SharedAndWake, PullUp, 30000, "\\_SB.GIO0", ,) {192}
+           Gpioio(Shared, PullUp, 0, 0, , "\\_SB.GIO0", ,) {126}
 
        })
        Return (RBUF)
