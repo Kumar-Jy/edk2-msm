@@ -7,6 +7,15 @@ jobs:
   build:
     name: Image Build
     runs-on: ubuntu-latest
+
+    strategy:
+      max-parallel: 4
+      matrix:
+        device:
+          - beryllium-tianma
+          - beryllium-ebbg
+          - beryllium-tianma-fts
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -23,12 +32,12 @@ jobs:
           sudo apt-get update
           sudo apt-get install --install-recommends winehq-stable libsdl2-2.0-0 libsdl2-dev  build-essential uuid-dev clang llvm iasl nasm gcc-aarch64-linux-gnu abootimg python3-pil python3-git gettext libgcc-s1:i386 libstdc++6:i386  -y
 
-      - name: Build an image for beryllium-tianma
+      - name: Build an image for ${{ matrix.device }}
         run: |
-          ./build.sh --device beryllium-tianma
+          ./build.sh --device ${{ matrix.device }}
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v7
         with:
-          name: beryllium-tianma
+          name: ${{ matrix.device }}
           path: ./*.img
