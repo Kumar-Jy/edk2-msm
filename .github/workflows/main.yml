@@ -1,6 +1,7 @@
 name: msm-Build
 
 on:
+  push:
   workflow_dispatch:
 
 jobs:

@@ -103,7 +103,10 @@ Device (ADCM)
                     Method (_CRS, 0x0, NotSerialized) 
                     {
                             Name (RBUF, ResourceTemplate () {
-									//GpioIo(Shared, Pullup, 0, 200, IoRestrictionOutputOnly, "\\_SB.GIO0", ,) {51} //HSJ_US_EURO_SEL/EN2
+                                    // HSJ_US_EURO_SEL/EN2: headset jack type select (EU = alternate pin)
+                                    // enabled so the QCOM audio miniport can drive the HP jack
+                                    // switch on the 3.5mm path.
+                                    GpioIo(Shared, Pullup, 0, 200, IoRestrictionOutputOnly, "\\_SB.GIO0", ,) {51}
                             })
                             Return (RBUF)
                     }

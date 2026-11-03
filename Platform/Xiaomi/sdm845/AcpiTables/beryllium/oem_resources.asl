@@ -54,17 +54,53 @@ Scope(\_SB_.PEP0)
                     },
                 },
 
+                package()
+                {
+                    "TLMMGPIO", // TLMMGPIO resource tas2559-reset-gpio
+                    package()
+                    {                                    
+                        12,  // PIN number = 12
+                        0,   // State: NOT active = 0x0
+                        0,   // Function select = 0
+                        1,   // direction = Output.
+                        0,   // NO Pull 
+                        0,   // Drive Strength: 0x0 = 2mA
+                    },
+                },
+                package()
+                {
+                    "TLMMGPIO", // TLMMGPIO resource tas2560-reset-gpio
+                    package()
+                    {                                    
+                        76,  // PIN number = 76
+                        0,   // State: NOT active = 0x0
+                        0,   // Function select = 0
+                        1,   // direction = Output.
+                        0,   // NO Pull 
+                        0,   // Drive Strength: 0x0 = 2mA
+                    },
+                },
+                
+                package()
+                {
+                    "DELAY",
+                    package()
+                    {
+                        500,  // 500 Milsec delay
+                    }
+                },
+
                 // Drive RESET Line High
                 package()
                 {
                     "TLMMGPIO", // TLMMGPIO resource tas2559-reset-gpio 
                     package()
                     {                                    
-                        12,  // PIN number = 14
+                        12,  // PIN number = 12
                         1,   // State: active = 0x1
                         0,   // Function select = 0
                         1,   // direction = O/P
-                        0,   //  Pull none 
+                        0,   // Pull none 
                         0,   // Drive Strength: 0x0 = 2mA
                     },
                 },
@@ -73,13 +109,22 @@ Scope(\_SB_.PEP0)
                     "TLMMGPIO", // TLMMGPIO resource tas2560-reset-gpio 
                     package()
                     {                                    
-                        76,  // PIN number = 25
+                        76,  // PIN number = 76
                         1,   // State: active = 0x1
                         0,   // Function select = 0
                         1,   // direction = O/P
-                        0,   //  Pull none 
+                        0,   // Pull none 
                         0,   // Drive Strength: 0x0 = 2mA
                     },
+                },
+
+                package()
+                {
+                    "DELAY", 
+                    package()
+                    {
+                        200,  // 200 Milsec delay
+                    }
                 },
             },
             Package()
