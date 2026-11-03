@@ -9,9 +9,10 @@ Device (QWLN)
         \_SB.PEP0,
         \_SB.MMU0
     })
-    Name(_PRW, Package() {0,0})    // wakeable from S0
-    Name(_S0W, 2)                  // S0 should put device in D2 for wake
-    Name(_S4W, 2)                  // all other Sx (just in case) should also wake from D2
+    // Disabled _PRW: WCN3990 cannot maintain S0 low-power compliance without dropping connection
+    // Name(_PRW, Package() {0,0})
+    Name(_S0W, 0)                  // Keep in D0 or power off cleanly, no invalid D2 wake
+    Name(_S4W, 0)                  // Clean power state transition for other Sx
     Name(_PRR, Package(0x1) { \_SB.AMSS.QWLN.WRST })  // Power resource reference for device reset and recovery.
 
     Method (_CRS, 0x0, NotSerialized)
